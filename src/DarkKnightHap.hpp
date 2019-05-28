@@ -59,6 +59,7 @@ public:
     {
         if(videoReady)
         {
+            ofBackground(0, 0, 0);
             ofDisableLighting();
             player.draw(0,0);
         }
