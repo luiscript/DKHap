@@ -20,15 +20,15 @@
  SOFTWARE.
  */
 
-#ifndef DarkKnightHap_hpp
-#define DarkKnightHap_hpp
+#ifndef DKHap_hpp
+#define DKHap_hpp
 
 #include "ofMain.h"
-#include "module.hpp"
+#include "DKModule.hpp"
 
 #include "ofxHapPlayer.h"
 
-class DarkKnightHap : public Module
+class DKHap: public DKModule
 {
 private:
     ofxHapPlayer player;
@@ -66,14 +66,14 @@ public:
     };
     void addModuleParameters()
     {
-        gui->addButton("file")->onButtonEvent(this, &DarkKnightHap::onVideoOpen);
-        gui->addButton("play")->onButtonEvent(this, &DarkKnightHap::onVideoPlay);
+        gui->addButton("file")->onButtonEvent(this, &DKHap::onVideoOpen);
+        gui->addButton("play")->onButtonEvent(this, &DKHap::onVideoPlay);
         
         gui->addMatrix("video index", 8, true);
         
         ofxDatGuiSlider * posSlider = gui->addSlider("position", 0, 1);
         posSlider->setPrecision(4)->bind(videoPosition);
-        posSlider->onSliderEvent(this, &DarkKnightHap::onVideoPositionChange);
+        posSlider->onSliderEvent(this, &DKHap::onVideoPositionChange);
     };
     void onVideoOpen(ofxDatGuiButtonEvent e)
     {
@@ -135,4 +135,4 @@ public:
 };
 
 
-#endif /* DarkKnightHap_hpp */
+#endif /* DKHap_hpp */
