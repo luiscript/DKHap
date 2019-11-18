@@ -69,8 +69,6 @@ public:
         gui->addButton("file")->onButtonEvent(this, &DKHap::onVideoOpen);
         gui->addButton("play")->onButtonEvent(this, &DKHap::onVideoPlay);
         
-        gui->addMatrix("video index", 8, true);
-        
         ofxDatGuiSlider * posSlider = gui->addSlider("position", 0, 1);
         posSlider->setPrecision(4)->bind(videoPosition);
         posSlider->onSliderEvent(this, &DKHap::onVideoPositionChange);
